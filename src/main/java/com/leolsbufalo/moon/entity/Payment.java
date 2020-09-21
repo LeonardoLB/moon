@@ -1,7 +1,5 @@
 package com.leolsbufalo.moon.entity;
 
-import com.leolsbufalo.moon.exceptions.BadCurrencyException;
-
 import javax.persistence.*;
 import java.util.List;
 
