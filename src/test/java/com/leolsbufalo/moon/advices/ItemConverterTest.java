@@ -10,7 +10,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class ItemConverterTest {
 
     @Test
-    public void ItemConverterToEntityTest() {
+    public void itemConverterToEntityTest() {
         ItemModel itemModel =  new ItemModel( "Teste", 5, 1050 );
         Item item = new Item("Teste", 5, 1050 );
 
@@ -22,7 +22,7 @@ public class ItemConverterTest {
     }
 
     @Test
-    public void ItemConvertToModelTest() {
+    public void itemConvertToModelTest() {
         ItemModel itemModel =  new ItemModel( "Teste", 5, 1050 );
         Item item = new Item("Teste", 5, 1050 );
 

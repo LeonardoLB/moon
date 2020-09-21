@@ -9,7 +9,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class CostumerConverterTest {
 
     @Test
-    public void CostumerConverterToEntityTest() {
+    public void costumerConverterToEntityTest() {
 
         Costumer costumerEntity = costumerEntityMock();
 
@@ -25,7 +25,7 @@ public class CostumerConverterTest {
     }
 
     @Test
-    public void CostumerConverterToModelTest() {
+    public void costumerConverterToModelTest() {
 
         CostumerModel costumerModel = costumerModelMock();
 
