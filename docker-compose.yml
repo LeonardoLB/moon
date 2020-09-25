@@ -3,6 +3,8 @@ version: '3.2'
 services:
   MySQL:
     image: mysql:8.0
+    cap_add:
+      - CAP_SYS_NICE
     container_name: moon-database
     command: '--default-authentication-plugin=mysql_native_password'
     environment:
