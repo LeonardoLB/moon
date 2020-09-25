@@ -30,7 +30,7 @@ public class RuntimeExceptionErrorAdvice {
     }
 
     private ErrorResponse getErrorResponse(MethodArgumentNotValidException ex, HttpStatus status, List<ErrorObject> errors) {
-        return new ErrorResponse("Invalid fields", status.value(),
+        return new ErrorResponse("Handler Error RuntimeException", status.value(),
                 status.getReasonPhrase(), ex.getBindingResult().getObjectName(), errors);
     }
 
