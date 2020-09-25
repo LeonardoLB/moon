@@ -1,6 +1,5 @@
-package com.leolsbufalo.moon.advices;
+package com.leolsbufalo.moon.converter;
 
-import com.leolsbufalo.moon.converter.CostumerCardConverter;
 import com.leolsbufalo.moon.entity.CostumerCard;
 import com.leolsbufalo.moon.model.CostumerCardModel;
 import org.junit.jupiter.api.Test;

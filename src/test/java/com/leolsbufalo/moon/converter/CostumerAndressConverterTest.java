@@ -1,8 +1,6 @@
-package com.leolsbufalo.moon.advices;
+package com.leolsbufalo.moon.converter;
 
-import com.leolsbufalo.moon.converter.CostumerAndressConverter;
 import com.leolsbufalo.moon.entity.CostumerAndress;
-import com.leolsbufalo.moon.entity.CostumerCard;
 import com.leolsbufalo.moon.model.CostumerAndressModel;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
