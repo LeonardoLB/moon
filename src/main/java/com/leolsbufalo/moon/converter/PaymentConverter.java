@@ -29,7 +29,6 @@ public class PaymentConverter extends Converter<PaymentModel, Payment> {
     }
 
     public static Payment convertToPaymentEntity(PaymentModel paymentModel) {
-        System.out.println(paymentModel.toString());
         return new Payment(
                 paymentModel.getCurrency(),
                 paymentModel.getValueInCents(),
