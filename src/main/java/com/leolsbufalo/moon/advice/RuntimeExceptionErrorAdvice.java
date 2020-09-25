@@ -21,7 +21,7 @@ public class RuntimeExceptionErrorAdvice {
     public ResponseEntity<ErrorResponse> processRuntimeException(RuntimeException ex) {
         List<ErrorObject> errors = getErrors(ex);
         ErrorResponse errorResponse = new ErrorResponse(
-                "Type error parse",
+                "Internal server Error",
                 HttpStatus.INTERNAL_SERVER_ERROR.value(),
                 HttpStatus.INTERNAL_SERVER_ERROR.getReasonPhrase(),
                 ex.getClass().getName(),
