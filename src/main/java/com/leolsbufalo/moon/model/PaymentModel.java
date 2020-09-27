@@ -3,9 +3,7 @@ package com.leolsbufalo.moon.model;
 import org.springframework.format.annotation.NumberFormat;
 
 import javax.validation.Valid;
-import javax.validation.constraints.Min;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Pattern;
+import javax.validation.constraints.*;
 import java.util.List;
 
 public class PaymentModel {
