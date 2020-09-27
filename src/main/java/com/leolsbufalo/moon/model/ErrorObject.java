@@ -4,12 +4,10 @@ public class ErrorObject {
 
     private String message;
     private String field;
-    private Object parameter;
 
-    public ErrorObject(String message, String field, Object parameter) {
+    public ErrorObject(String message, String field) {
         this.message = message;
         this.field = field;
-        this.parameter = parameter;
     }
 
     public String getMessage() {
@@ -26,13 +24,5 @@ public class ErrorObject {
 
     public void setField(String field) {
         this.field = field;
-    }
-
-    public Object getParameter() {
-        return parameter;
-    }
-
-    public void setParameter(Object parameter) {
-        this.parameter = parameter;
     }
 }
