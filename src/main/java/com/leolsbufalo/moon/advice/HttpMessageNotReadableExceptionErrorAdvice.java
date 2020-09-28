@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @ControllerAdvice
-public class InvalidFormatExceptionErrorAdvice {
+public class HttpMessageNotReadableExceptionErrorAdvice {
 
     @ExceptionHandler(HttpMessageNotReadableException.class)
     @ResponseStatus(HttpStatus.BAD_REQUEST)
