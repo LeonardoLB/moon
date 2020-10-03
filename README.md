@@ -1,6 +1,6 @@
 # Moon project
 
-![moon-image](https://e7.pngegg.com/pngimages/220/483/png-clipart-planet-cartoon-green-moon-blue-teal.png)
+![moon-image](https://image.freepik.com/free-vector/cartoon-planet-with-craters_6317-487.jpg)
 
 ## Introduction
 
