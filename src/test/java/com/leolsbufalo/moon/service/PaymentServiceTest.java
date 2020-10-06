@@ -1,15 +1,18 @@
 package com.leolsbufalo.moon.service;
 
 import com.leolsbufalo.moon.entity.*;
+import com.leolsbufalo.moon.repository.PaymentRepository;
 import com.leolsbufalo.moon.service.impl.PaymentServiceImpl;
-import org.junit.Before;
-import org.junit.Test;
-import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
+import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 import org.mockito.junit.MockitoJUnitRunner;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.List;
 
@@ -18,29 +21,31 @@ public class PaymentServiceTest {
 
     private static Payment payment;
 
+    @Mock
+    PaymentRepository paymentRepository;
+
     @InjectMocks
     PaymentServiceImpl paymentServiceImpl;
 
-
-    @Before
+    @BeforeEach
     public void setUp() {
         MockitoAnnotations.initMocks(this);
-    }
-
-
-    @BeforeAll
-    public void init() {
         payment = createPaymentEntity();
     }
 
 
     @Test
     public void createPaymentTest() {
-        Mockito.when(paymentServiceImpl.createPayment(payment)).thenReturn(payment);
+
+        Mockito.when(paymentRepository.save(payment)).thenReturn(payment);
+
+        Payment paymentCreated = paymentServiceImpl.createPayment(payment);
+
+        assertEquals(paymentCreated, payment);
     }
 
 
-    public Payment createPaymentEntity() {
+    public static Payment createPaymentEntity() {
         return new Payment(
                 "BRL",
                 1050,
