@@ -8,10 +8,18 @@ This project is a payment reciever, created for studie, the responsibilite
 about moon project is to recive a payment requisiton, do validations in properties, 
 save it and send to a Kafka queue.
 
+## Requeriments
+
+- Docker
 
 ## Setup
-
-
 ```
-    working
+docker-compose up --build
+```
+
+
+## Postman Documentation
+Link:
+```
+https://documenter.getpostman.com/view/5267825/TVRhbpDN
 ```
