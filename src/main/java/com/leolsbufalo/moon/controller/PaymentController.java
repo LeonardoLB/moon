@@ -20,8 +20,6 @@ public class PaymentController {
 
     PaymentConverter paymentConverter = new PaymentConverter();
 
-    HttpStatus status;
-
     @PostMapping
     public ResponseEntity<PaymentModel> createPayment(@Valid @RequestBody PaymentModel paymentModel) {
             Payment payment = paymentServiceImpl.createPayment(paymentConverter.convertToPaymentEntity(paymentModel));
