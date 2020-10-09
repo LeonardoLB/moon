@@ -1,11 +1,11 @@
 spring:
   datasource:
     driverClassName: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://0.0.0.0:3306/moon
+    url: jdbc:mysql://${MYSQL_HOST}:${MYSQL_PORT}/moon
     password: root
     username: root
   jpa:
-    showSql: false
+    show-sql: false
     hibernate:
-      ddlAuto: none
-    generateDdl: true
+      ddl-auto: none
+    generate-ddl: true
