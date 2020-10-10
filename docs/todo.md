@@ -5,16 +5,16 @@ Some of this items I had some help and revision from a Senior of my team (Lindem
 
 ## Checklist
 
-- Create Entity ✅
-- Create Dto ✅
-- Create Repository ✅
-- Create Database ✅
-- Config Docker Compose 
-- Create Payment Creation ✅
-- Config Dockerfile ✅
-- Implement Converter ✅
-- Create Error Handlers in Dto ✅
-- Create Tests ✅
+- ✅ Create Entity 
+- ✅ Create Dto 
+- ✅ Create Repository 
+- ✅ Create Database 
+- ✅ Config Initial Docker Compose 
+- ✅ Create Payment Creation 
+- ✅ Config Dockerfile 
+- ✅ Implement Converter 
+- ✅ Create Error Handlers in Dto 
+- ✅ Create Tests 
 - Improving Tests
 - Config Kafka Manager
 - Config Kafka
