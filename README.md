@@ -1,6 +1,6 @@
 # Moon project
 
-![moon-image](https://image.freepik.com/free-vector/cartoon-planet-with-craters_6317-487.jpg)
+<img src="https://image.freepik.com/free-vector/cartoon-planet-with-craters_6317-487.jpg" alt="alt text" width="300">
 
 ## Introduction
 
