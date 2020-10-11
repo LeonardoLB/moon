@@ -1,5 +1,8 @@
 # Moon project
-
+<img src="https://img.shields.io/badge/java-v11-blue?style=for-the-badge">
+<img alt="GitHub repo size" src="https://img.shields.io/github/repo-size/leonardoLB/moon?style=for-the-badge">
+<br>
+<br>
 <img src="https://image.freepik.com/free-vector/cartoon-planet-with-craters_6317-487.jpg" alt="alt text" width="300">
 
 ## Introduction
