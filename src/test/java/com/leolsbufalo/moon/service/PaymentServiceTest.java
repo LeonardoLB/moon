@@ -1,6 +1,7 @@
 package com.leolsbufalo.moon.service;
 
 import com.leolsbufalo.moon.entity.*;
+import com.leolsbufalo.moon.kafka.Producer.PaymentProducer;
 import com.leolsbufalo.moon.repository.PaymentRepository;
 import com.leolsbufalo.moon.service.impl.PaymentServiceImpl;
 import org.junit.jupiter.api.BeforeEach;
@@ -24,6 +25,9 @@ public class PaymentServiceTest {
     @Mock
     PaymentRepository paymentRepository;
 
+    @Mock
+    PaymentProducer paymentProducer;
+
     @InjectMocks
     PaymentServiceImpl paymentServiceImpl;
 
@@ -33,11 +37,11 @@ public class PaymentServiceTest {
         payment = createPaymentEntity();
     }
 
-
     @Test
     public void createPaymentTest() {
 
         Mockito.when(paymentRepository.save(payment)).thenReturn(payment);
+        Mockito.when(paymentProducer.send(payment)).thenReturn(payment);
 
         Payment paymentCreated = paymentServiceImpl.createPayment(payment);
 
