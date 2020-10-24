@@ -3,12 +3,16 @@ package com.leolsbufalo.moon.kafka.Producer;
 import com.leolsbufalo.moon.entity.Payment;
 import org.apache.kafka.clients.producer.KafkaProducer;
 import org.apache.kafka.clients.producer.ProducerRecord;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
 
+@Component
 public class PaymentProducer {
 
     @Value("${kafka.topics.create-payment}")
     private String createPaymentTopic;
+
 
     private KafkaProducer<Integer, Payment> paymentProducer;
 
