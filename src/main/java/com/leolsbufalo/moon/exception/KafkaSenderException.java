@@ -1,4 +1,8 @@
-package com.leolsbufalo.moon;
+package com.leolsbufalo.moon.exception;
 
-public class KafkaSenderException {
+public class KafkaSenderException extends Exception {
+
+    public KafkaSenderException(String message) {
+        super(message);
+    }
 }
