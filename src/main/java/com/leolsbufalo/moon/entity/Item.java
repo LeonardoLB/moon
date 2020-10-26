@@ -1,5 +1,8 @@
 package com.leolsbufalo.moon.entity;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 import javax.persistence.*;
 
 @Entity
@@ -63,4 +66,19 @@ public class Item {
         this.priceInCents = priceInCents;
     }
 
+    public String toJson() throws JsonProcessingException {
+        ObjectMapper mapper = new ObjectMapper();
+        return mapper.writeValueAsString(this);
+    }
+
+    @Override
+    public String toString() {
+        return "Item{" +
+                "id=" + id +
+                ", description='" + description + '\'' +
+                ", payment=" + payment +
+                ", quantity=" + quantity +
+                ", priceInCents=" + priceInCents +
+                '}';
+    }
 }

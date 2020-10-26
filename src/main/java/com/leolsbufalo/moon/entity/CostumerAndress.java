@@ -1,5 +1,8 @@
 package com.leolsbufalo.moon.entity;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 import javax.persistence.*;
 
 @Entity
@@ -101,4 +104,23 @@ public class CostumerAndress {
         this.zipcode = zipcode;
     }
 
+    public String toJson() throws JsonProcessingException {
+        ObjectMapper mapper = new ObjectMapper();
+        return mapper.writeValueAsString(this);
+    }
+
+    @Override
+    public String toString() {
+        return "CostumerAndress{" +
+                "id=" + id +
+                ", payment=" + payment +
+                ", street='" + street + '\'' +
+                ", number=" + number +
+                ", complement='" + complement + '\'' +
+                ", district='" + district + '\'' +
+                ", state='" + state + '\'' +
+                ", country='" + country + '\'' +
+                ", zipcode=" + zipcode +
+                '}';
+    }
 }

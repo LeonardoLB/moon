@@ -1,5 +1,8 @@
 package com.leolsbufalo.moon.entity;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 import javax.persistence.*;
 
 @Entity
@@ -99,5 +102,25 @@ public class CostumerCard {
 
     public void setExpirationYear(int expirationYear) {
         this.expirationYear = expirationYear;
+    }
+
+    public String toJson() throws JsonProcessingException {
+        ObjectMapper mapper = new ObjectMapper();
+        return mapper.writeValueAsString(this);
+    }
+
+    @Override
+    public String toString() {
+        return "CostumerCard{" +
+                "id=" + id +
+                ", payment=" + payment +
+                ", method='" + method + '\'' +
+                ", number='" + number + '\'' +
+                ", cvc=" + cvc +
+                ", name='" + name + '\'' +
+                ", documentNumber='" + documentNumber + '\'' +
+                ", expirationMonth=" + expirationMonth +
+                ", expirationYear=" + expirationYear +
+                '}';
     }
 }
