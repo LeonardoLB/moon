@@ -1,5 +1,8 @@
 package com.leolsbufalo.moon.entity;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 import javax.persistence.*;
 
 @Entity
@@ -99,5 +102,25 @@ public class Costumer {
 
     public void setDocumentNumber(String documentNumber) {
         this.documentNumber = documentNumber;
+    }
+
+    public String toJson() throws JsonProcessingException {
+        ObjectMapper mapper = new ObjectMapper();
+        return mapper.writeValueAsString(this);
+    }
+
+    @Override
+    public String toString() {
+        return "Costumer{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", payment=" + payment +
+                ", email='" + email + '\'' +
+                ", phoneCountryCode=" + phoneCountryCode +
+                ", phoneAreaCode=" + phoneAreaCode +
+                ", phoneNumber=" + phoneNumber +
+                ", birthDate='" + birthDate + '\'' +
+                ", documentNumber='" + documentNumber + '\'' +
+                '}';
     }
 }
