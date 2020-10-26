@@ -39,7 +39,7 @@ public class RuntimeExceptionErrorAdvice {
         } catch (Exception ex) {
             JsonParseException jsonParseException = (JsonParseException) exception.getCause();
             return List.of(new ErrorObject("Error to execute JsonMapper",
-                    jsonParseException.getMessage() ));
+                    jsonParseException.getLocation().toString() ));
         }
     }
 }
