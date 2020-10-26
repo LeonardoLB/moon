@@ -24,7 +24,7 @@ public class CostumerAndressModel {
     @Pattern(regexp = "[A-ZÁ-Úa-zá-ú ]{0,255}", message = "Bad Country, just use letters")
     private String country;
     @NotNull
-    @Min(value = 1, message = "Value must be bigger than 1, just use numbers")
+    @Min(value = 1, message = "Value must be bigger than 0, just use numbers")
     private int zipcode;
 
     public CostumerAndressModel(String street, int number, String complement, String district, String state, String country, int zipcode) {

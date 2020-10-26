@@ -10,10 +10,10 @@ public class ItemModel {
     @Pattern(regexp = "[A-Za-z ]{0,255}", message = "Bad Description, just use letters")
     private String description;
     @NotNull(message = "Bad Currency, must not be null")
-    @Min(value = 1, message = "Value must be bigger than 1")
+    @Min(value = 1, message = "Value must be bigger than 0")
     private int quantity;
     @NotNull(message = "Bad Currency, must not be null")
-    @Min(value = 1, message = "Value must be bigger than 1")
+    @Min(value = 1, message = "Value must be bigger than 0")
     private int priceInCents;
 
     public ItemModel(String description, int quantity, int priceInCents) {

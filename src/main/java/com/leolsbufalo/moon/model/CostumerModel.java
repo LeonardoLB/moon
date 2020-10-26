@@ -17,7 +17,7 @@ public class CostumerModel {
     @Digits(integer = 3, fraction = 0)
     private int phoneAreaCode;
     @NotNull
-    @Min(value = 1, message = "Bad Phone Number, must be bigger than 1")
+    @Min(value = 1, message = "Bad Phone Number, must be bigger than 0")
     private int phoneNumber;
     @NotNull
     @Pattern(regexp = "(0?[1-9]|1[0-2])/([0-2]?[1-9]|[1-3][01])/\\d{4}", message = "Bad Birth Date pattern dd/MM/yyyy")

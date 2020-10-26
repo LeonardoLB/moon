@@ -20,8 +20,8 @@ public class CostumerCardModel {
     @Pattern(regexp = "[0-9]{0,20}", message = "Bad Document Number, just use number in string format")
     private String documentNumber;
     @NotNull
-    @Min(value = 1, message = "Value must be bigger than 1")
-    @Max(value = 12, message = "Value must be less than 1")
+    @Min(value = 1, message = "Value must be bigger than 0")
+    @Max(value = 12, message = "Value must be equal or less than 12")
     private int expirationMonth;
     @NotNull
     @Min(value = 1930, message = "Value must be bigger than 1930")
