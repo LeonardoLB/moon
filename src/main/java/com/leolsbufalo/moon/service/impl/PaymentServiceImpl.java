@@ -19,8 +19,8 @@ public class PaymentServiceImpl implements PaymentService {
     @Override
     public Payment createPayment(Payment payment) {
         try {
-            paymentProducer.send(payment);
-            return paymentRepository.save(payment);
+            paymentRepository.save(payment);
+            return paymentProducer.send(payment);
 
         } catch (Exception exception) {
             throw exception;
