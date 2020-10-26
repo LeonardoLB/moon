@@ -26,3 +26,17 @@ Link:
 ```
 https://documenter.getpostman.com/view/5267825/TVRhbpDN
 ```
+
+## Commits
+Starting to use conventional commits pattern, keep this pattern commit:
+
+`[feat]` for a new features <br />
+`[fix]` for fix something <br />
+`[test]` for new tests and fix them <br />
+`[docs]` for change a document <br />
+`[chore]` for some pre defined chore <br />
+
+Follow link:
+```
+https://www.conventionalcommits.org/en/v1.0.0-beta.2/
+```
