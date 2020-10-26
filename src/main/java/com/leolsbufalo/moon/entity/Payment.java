@@ -103,9 +103,14 @@ public class Payment {
         this.costumer = costumer;
     }
 
-    public String toJson() throws JsonProcessingException {
+    public String toJson() {
         ObjectMapper mapper = new ObjectMapper();
-        return mapper.writeValueAsString(this);
+        try {
+            String json = mapper.writeValueAsString(this);
+            return json;
+        } catch (JsonProcessingException exception) {
+            throw new RuntimeException("Failure to parse Payment to Json");
+        }
     }
 
     @Override
