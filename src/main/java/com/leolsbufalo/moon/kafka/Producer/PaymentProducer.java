@@ -1,5 +1,6 @@
 package com.leolsbufalo.moon.kafka.Producer;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.leolsbufalo.moon.entity.Payment;
 import org.apache.kafka.clients.producer.KafkaProducer;
 import org.apache.kafka.clients.producer.ProducerRecord;
@@ -13,19 +14,15 @@ public class PaymentProducer {
     @Value("${kafka.topics.create-payment}")
     private String createPaymentTopic;
 
-
-    private KafkaProducer<Integer, Payment> paymentProducer;
+    @Autowired
+    private KafkaProducer<Integer, String> paymentProducer;
 
 
     public Payment send(Payment payment) {
-        ProducerRecord producerRecord = new ProducerRecord<Integer, Payment>(createPaymentTopic, payment.getId(), payment);
+        ProducerRecord<Integer, String> producerRecord = new ProducerRecord<>(createPaymentTopic, payment.getId(), payment.toJson());
 
-        try {
-            paymentProducer.send(producerRecord);
-        } catch (Exception exception) {
-            throw exception;
-        }
-
+        paymentProducer.send(producerRecord);
+        paymentProducer.flush();
         paymentProducer.close();
         return payment;
     }
