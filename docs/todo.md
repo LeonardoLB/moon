@@ -22,5 +22,5 @@ Some of this items I had some help and revision from a Senior of my team (Lindem
 - ✅ Create producer to Kafka
 - Validate Costumer andress properties, it can have letter and numbers
 - Entitys relacionship  
-- Error Object name 
+- ✅ Error Object name 
 - ✅ Implement UUID 
