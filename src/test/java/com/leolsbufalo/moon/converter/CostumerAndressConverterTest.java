@@ -43,7 +43,7 @@ public class CostumerAndressConverterTest {
     public CostumerAndress costumerAndressMock() {
         return new CostumerAndress(
                 "Rua Andromeda",
-                900,
+                "900",
                 "apt 2030",
                 "sistema cosmico",
                 "Universo",
@@ -54,7 +54,7 @@ public class CostumerAndressConverterTest {
     public CostumerAndressModel costumerAndressModelMock(){
         return new CostumerAndressModel(
                 "Rua Andromeda",
-                900,
+                "900",
                 "apt 2030",
                 "sistema cosmico",
                 "Universo",

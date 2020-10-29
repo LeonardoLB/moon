@@ -15,14 +15,14 @@ public class CostumerAndress {
     @OneToOne(mappedBy = "costumerAndress", fetch = FetchType.LAZY)
     private Payment payment;
     private String street;
-    private int number;
+    private String number;
     private String complement;
     private String district;
     private String state;
     private String country;
     private int zipcode;
 
-    public CostumerAndress(String street, int number, String complement, String district, String state, String country, int zipcode) {
+    public CostumerAndress(String street, String number, String complement, String district, String state, String country, int zipcode) {
         this.street = street;
         this.number = number;
         this.complement = complement;
@@ -56,11 +56,11 @@ public class CostumerAndress {
         this.street = street;
     }
 
-    public int getNumber() {
+    public String getNumber() {
         return number;
     }
 
-    public void setNumber(int number) {
+    public void setNumber(String number) {
         this.number = number;
     }
 

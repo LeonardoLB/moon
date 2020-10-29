@@ -68,7 +68,7 @@ public class PaymentServiceTest {
                         2060),
                 new CostumerAndress(
                         "Stret Septima Zenobia",
-                        90,
+                        "90",
                         "Paralel universe",
                         "SP",
                         "Athenas",
