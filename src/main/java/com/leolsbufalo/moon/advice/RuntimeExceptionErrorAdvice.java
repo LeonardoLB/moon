@@ -1,9 +1,8 @@
 package com.leolsbufalo.moon.advice;
 
 import com.fasterxml.jackson.core.JsonParseException;
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonMappingException;
-import com.leolsbufalo.moon.model.ErrorObject;
+import com.leolsbufalo.moon.model.Error;
 import com.leolsbufalo.moon.model.ErrorResponse;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -21,24 +20,24 @@ public class RuntimeExceptionErrorAdvice {
     @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
     @ResponseBody
     protected ResponseEntity JsonProcessingExceptionHandler(RuntimeException exception) {
-        List<ErrorObject> errors = getErrors(exception);
+        List<Error> errors = getErrors(exception);
         ErrorResponse errorResponse = getErrorResponse(exception, HttpStatus.INTERNAL_SERVER_ERROR, errors);
         return new ResponseEntity<>(errorResponse, HttpStatus.INTERNAL_SERVER_ERROR);
     }
 
-    private ErrorResponse getErrorResponse(RuntimeException ex, HttpStatus status, List<ErrorObject> errors) {
+    private ErrorResponse getErrorResponse(RuntimeException ex, HttpStatus status, List<Error> errors) {
         return new ErrorResponse("Error to parse value", status.value(),
                 status.getReasonPhrase(), ex.getClass().getSimpleName(), errors);
     }
 
-    private List<ErrorObject> getErrors(RuntimeException exception) {
+    private List<Error> getErrors(RuntimeException exception) {
         try {
             JsonMappingException jsonMappingException = (JsonMappingException) exception.getCause();
-            return List.of(new ErrorObject("Mapper Error",
+            return List.of(new Error("Mapper Error",
                     jsonMappingException.getPath().get(0).getFieldName()));
         } catch (Exception ex) {
             JsonParseException jsonParseException = (JsonParseException) exception.getCause();
-            return List.of(new ErrorObject("Error to execute JsonMapper",
+            return List.of(new Error("Error to execute JsonMapper",
                     jsonParseException.getLocation().toString() ));
         }
     }

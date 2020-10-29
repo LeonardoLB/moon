@@ -8,9 +8,9 @@ public class ErrorResponse {
     private int code;
     private String status;
     private String objectName;
-    private List<ErrorObject> errors;
+    private List<Error> errors;
 
-    public ErrorResponse(String message, int code, String status, String objectName, List<ErrorObject> errors) {
+    public ErrorResponse(String message, int code, String status, String objectName, List<Error> errors) {
         this.message = message;
         this.code = code;
         this.status = status;
@@ -50,11 +50,11 @@ public class ErrorResponse {
         this.objectName = objectName;
     }
 
-    public List<ErrorObject> getErrors() {
+    public List<Error> getErrors() {
         return errors;
     }
 
-    public void setErrors(List<ErrorObject> errors) {
+    public void setErrors(List<Error> errors) {
         this.errors = errors;
     }
 }

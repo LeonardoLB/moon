@@ -1,11 +1,11 @@
 package com.leolsbufalo.moon.model;
 
-public class ErrorObject {
+public class Error {
 
     private String message;
     private String field;
 
-    public ErrorObject(String message, String field) {
+    public Error(String message, String field) {
         this.message = message;
         this.field = field;
     }
