@@ -13,6 +13,7 @@ public class Payment {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+    private String unique_id;
     private String currency;
     private int valueInCents;
     private int installments;
@@ -33,7 +34,8 @@ public class Payment {
     private Costumer costumer;
 
 
-    public Payment(String currency, int valueInCents, int installments, List<Item> items, CostumerCard costumerCard, CostumerAndress costumerAndress, Costumer costumer) {
+    public Payment(String unique_id, String currency, int valueInCents, int installments, List<Item> items, CostumerCard costumerCard, CostumerAndress costumerAndress, Costumer costumer) {
+        this.unique_id = unique_id;
         this.currency = currency;
         this.valueInCents = valueInCents;
         this.installments = installments;
@@ -49,6 +51,14 @@ public class Payment {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public String getUnique_id() {
+        return unique_id;
+    }
+
+    public void setUnique_id(String unique_id) {
+        this.unique_id = unique_id;
     }
 
     public String getCurrency() {

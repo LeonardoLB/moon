@@ -1,11 +1,14 @@
 package com.leolsbufalo.moon.model;
 
+import com.leolsbufalo.moon.util.UniqueGenerator;
+
 import javax.validation.Valid;
 import javax.validation.constraints.*;
 import java.util.List;
 
 public class PaymentModel {
 
+    private String unique_id = new UniqueGenerator().uniqueIdGenerator();
     @NotNull(message = "Bad Currency, must not be null")
     @Pattern(regexp = "[a-zA-Z]{3}", message = "Bad Currency")
     private String currency;
@@ -32,6 +35,18 @@ public class PaymentModel {
         this.costumerCard = costumerCard;
         this.costumerAndress = costumerAndress;
         this.costumer = costumer;
+    }
+
+    public String getUnique_id() {
+        return unique_id;
+    }
+
+    public void setUnique_id(String unique_id) {
+        this.unique_id = unique_id;
+    }
+
+    public void setValueInCents(Integer valueInCents) {
+        this.valueInCents = valueInCents;
     }
 
     public String getCurrency() { return currency; }
