@@ -51,6 +51,7 @@ public class PaymentServiceTest {
 
     public static Payment createPaymentEntity() {
         return new Payment(
+                        "12345678910",
                 "BRL",
                 1050,
                 1,
