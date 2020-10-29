@@ -13,6 +13,7 @@ CREATE SCHEMA IF NOT EXISTS `moon` DEFAULT CHARACTER SET utf8 ;
 
 CREATE TABLE IF NOT EXISTS `moon`.`payment` (
   `id` INT(11) NOT NULL AUTO_INCREMENT,
+  `unique_id` VARCHAR(200) NOT NULL,
   `currency` VARCHAR(45) NOT NULL,
   `value_in_cents` INT(11) NOT NULL,
   `installments` INT(11) NOT NULL,
