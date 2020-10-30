@@ -1,15 +1,15 @@
 package com.leolsbufalo.moon.converter;
 
-import com.leolsbufalo.moon.entity.CostumerCard;
+import com.leolsbufalo.moon.entity.PaymentCard;
 import com.leolsbufalo.moon.model.CostumerCardModel;
 
-public class CostumerCardConverter extends Converter<CostumerCardModel, CostumerCard> {
+public class CostumerCardConverter extends Converter<CostumerCardModel, PaymentCard> {
 
     public CostumerCardConverter() {
         super(CostumerCardConverter::convertToCostumerCardEntity, CostumerCardConverter::convertToCostumerCardModel);
     }
 
-    public static CostumerCardModel convertToCostumerCardModel(CostumerCard costumerCard) {
+    public static CostumerCardModel convertToCostumerCardModel(PaymentCard costumerCard) {
         return new CostumerCardModel(
                 costumerCard.getMethod(),
                 costumerCard.getNumber(),
@@ -21,8 +21,8 @@ public class CostumerCardConverter extends Converter<CostumerCardModel, Costumer
         );
     }
 
-    public static CostumerCard convertToCostumerCardEntity(CostumerCardModel costumerCardModel) {
-        return new CostumerCard(
+    public static PaymentCard convertToCostumerCardEntity(CostumerCardModel costumerCardModel) {
+        return new PaymentCard(
                 costumerCardModel.getMethod(),
                 costumerCardModel.getNumber(),
                 costumerCardModel.getCvc(),

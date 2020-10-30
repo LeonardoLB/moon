@@ -6,7 +6,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "item")
+@Table(name = "payment_item")
 public class Item {
 
     @Id
