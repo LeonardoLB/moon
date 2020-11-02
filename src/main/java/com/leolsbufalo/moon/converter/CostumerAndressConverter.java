@@ -6,7 +6,7 @@ import com.leolsbufalo.moon.model.CostumerAndressModel;
 public class CostumerAndressConverter extends Converter<CostumerAndressModel, CostumerAndress> {
 
     public CostumerAndressConverter() {
-        super(CostumerAndressConverter::converToCostumerAndressEntity, CostumerAndressConverter::convertToCostumerAndressModel);
+        super(CostumerAndressConverter::convertToCostumerAndressEntity, CostumerAndressConverter::convertToCostumerAndressModel);
     }
 
     public static CostumerAndressModel convertToCostumerAndressModel(CostumerAndress costumerAndress) {
@@ -21,7 +21,7 @@ public class CostumerAndressConverter extends Converter<CostumerAndressModel, Co
         );
     }
 
-    public  static CostumerAndress converToCostumerAndressEntity(CostumerAndressModel costumerAndressModel) {
+    public  static CostumerAndress convertToCostumerAndressEntity(CostumerAndressModel costumerAndressModel) {
         return new CostumerAndress(
                 costumerAndressModel.getStreet(),
                 costumerAndressModel.getNumber(),

@@ -1,6 +1,9 @@
 package com.leolsbufalo.moon.model;
 
 
+import com.leolsbufalo.moon.entity.CostumerAndress;
+
+import javax.validation.Valid;
 import javax.validation.constraints.*;
 
 public class CostumerModel {
@@ -25,8 +28,10 @@ public class CostumerModel {
     @NotNull
     @Pattern(regexp = "[0-9]{0,20}", message = "Bad Document Number, just use number in string format")
     private String documentNumber;
+    @Valid
+    private CostumerAndressModel costumerAndress;
 
-    public CostumerModel(String name, String email, int phoneCountryCode, int phoneAreaCode, int phoneNumber, String birthDate, String documentNumber) {
+    public CostumerModel(String name, String email, int phoneCountryCode, int phoneAreaCode, int phoneNumber, String birthDate, String documentNumber, CostumerAndressModel costumerAndress) {
         this.name = name;
         this.email = email;
         this.phoneCountryCode = phoneCountryCode;
@@ -34,6 +39,7 @@ public class CostumerModel {
         this.phoneNumber = phoneNumber;
         this.birthDate = birthDate;
         this.documentNumber = documentNumber;
+        this.costumerAndress = costumerAndress;
     }
 
     public String getName() {
@@ -92,6 +98,14 @@ public class CostumerModel {
         this.documentNumber = documentNumber;
     }
 
+    public CostumerAndressModel getCostumerAndressModel() {
+        return costumerAndress;
+    }
+
+    public void setCostumerAndressModel(CostumerAndressModel costumerAndress) {
+        this.costumerAndress = costumerAndress;
+    }
+
     @Override
     public String toString() {
         return "CostumerModel{" +
@@ -102,6 +116,7 @@ public class CostumerModel {
                 ", phoneNumber=" + phoneNumber +
                 ", birthDate='" + birthDate + '\'' +
                 ", documentNumber='" + documentNumber + '\'' +
+                ", costumerAndress='" + costumerAndress + '\'' +
                 '}';
     }
 }

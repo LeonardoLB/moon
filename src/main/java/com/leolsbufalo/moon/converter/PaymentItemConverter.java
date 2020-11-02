@@ -1,15 +1,15 @@
 package com.leolsbufalo.moon.converter;
 
-import com.leolsbufalo.moon.entity.Item;
+import com.leolsbufalo.moon.entity.PaymentItem;
 import com.leolsbufalo.moon.model.ItemModel;
 
-public class ItemConverter extends Converter<ItemModel, Item> {
+public class PaymentItemConverter extends Converter<ItemModel, PaymentItem> {
 
-    public ItemConverter() {
-        super(ItemConverter::converterToItemEntity, ItemConverter::converterToItemModel);
+    public PaymentItemConverter() {
+        super(PaymentItemConverter::converterToPayamentItemEntity, PaymentItemConverter::converterToPaymentItemModel);
     }
 
-    private static ItemModel converterToItemModel(Item item) {
+    private static ItemModel converterToPaymentItemModel(PaymentItem item) {
         return new ItemModel(
                 item.getDescription(),
                 item.getQuantity(),
@@ -17,8 +17,8 @@ public class ItemConverter extends Converter<ItemModel, Item> {
         );
     }
 
-    private static  Item converterToItemEntity(ItemModel itemModel) {
-        return new Item(
+    private static PaymentItem converterToPayamentItemEntity(ItemModel itemModel) {
+        return new PaymentItem(
                 itemModel.getDescription(),
                 itemModel.getQuantity(),
                 itemModel.getPriceInCents()

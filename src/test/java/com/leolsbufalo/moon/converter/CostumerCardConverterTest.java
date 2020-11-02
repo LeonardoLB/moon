@@ -1,6 +1,6 @@
 package com.leolsbufalo.moon.converter;
 
-import com.leolsbufalo.moon.entity.CostumerCard;
+import com.leolsbufalo.moon.entity.PaymentCard;
 import com.leolsbufalo.moon.model.CostumerCardModel;
 import org.junit.jupiter.api.Test;
 
@@ -13,7 +13,7 @@ public class CostumerCardConverterTest {
 
         CostumerCardModel costumerCardModel = costumerCardModelMock();
 
-        CostumerCard costumerCardConverted = new CostumerCardConverter().convertFromDto(costumerCardModelMock());
+        PaymentCard costumerCardConverted = new PaymentCardConverter().convertFromDto(costumerCardModelMock());
 
         assertEquals(costumerCardConverted.getMethod(), costumerCardModel.getMethod(), "method must be equal");
         assertEquals(costumerCardConverted.getNumber(), costumerCardModel.getNumber(), "number must be equal");
@@ -28,9 +28,9 @@ public class CostumerCardConverterTest {
     @Test
     public void converterCostumerToModelTest(){
 
-        CostumerCard costumerCard = costumerCardEntityMock();
+        PaymentCard costumerCard = costumerCardEntityMock();
 
-        CostumerCardModel costumerCardModelConverted = new CostumerCardConverter().convertFromEntity(costumerCardEntityMock());
+        CostumerCardModel costumerCardModelConverted = new PaymentCardConverter().convertFromEntity(costumerCardEntityMock());
 
         assertEquals(costumerCardModelConverted.getMethod(), costumerCard.getMethod(), "method must be equal");
         assertEquals(costumerCardModelConverted.getNumber(), costumerCard.getNumber(), "number must be equal");
@@ -43,8 +43,8 @@ public class CostumerCardConverterTest {
     }
 
 
-    public CostumerCard costumerCardEntityMock() {
-        return new CostumerCard(
+    public PaymentCard costumerCardEntityMock() {
+        return new PaymentCard(
                 "credit card",
                 "909909909909909",
                 000,

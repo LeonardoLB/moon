@@ -5,8 +5,8 @@ import com.leolsbufalo.moon.model.PaymentModel;
 
 public class PaymentConverter extends Converter<PaymentModel, Payment> {
 
-    private static ItemConverter itemConverter = new ItemConverter();
-    private static CostumerCardConverter costumerCardConverter = new CostumerCardConverter();
+    private static PaymentItemConverter itemConverter = new PaymentItemConverter();
+    private static PaymentCardConverter paymentCardConverter = new PaymentCardConverter();
     private static CostumerAndressConverter costumerAndressConverter = new CostumerAndressConverter();
     private static CostumerConverter costumerConverter = new CostumerConverter();
 
@@ -22,8 +22,7 @@ public class PaymentConverter extends Converter<PaymentModel, Payment> {
                 payment.getValueInCents(),
                 payment.getInstallments(),
                 itemConverter.createFromEntities(payment.getItems()),
-                costumerCardConverter.convertFromEntity(payment.getCostumerCard()),
-                costumerAndressConverter.convertFromEntity(payment.getCostumerAndress()),
+                paymentCardConverter.convertFromEntity(payment.getCostumerCard()),
                 costumerConverter.convertFromEntity(payment.getCostumer())
         );
     }
@@ -35,8 +34,7 @@ public class PaymentConverter extends Converter<PaymentModel, Payment> {
                 paymentModel.getValueInCents(),
                 paymentModel.getInstallments(),
                 itemConverter.createFromDtos(paymentModel.getItems()),
-                costumerCardConverter.convertFromDto(paymentModel.getCostumerCard()),
-                costumerAndressConverter.convertFromDto(paymentModel.getCostumerAndress()),
+                paymentCardConverter.convertFromDto(paymentModel.getCostumerCard()),
                 costumerConverter.convertToCostumerEntity(paymentModel.getCostumer())
         );
     }

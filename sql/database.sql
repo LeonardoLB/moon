@@ -74,15 +74,15 @@ CREATE TABLE IF NOT EXISTS `moon`.`payment` (
   `value_in_cents` INT(11) NOT NULL,
   `installments` INT(11) NOT NULL,
   `costumer_id` INT(11) NOT NULL,
-  `costumer_card_id` INT(11) NOT NULL,
+  `payment_card_id` INT(11) NOT NULL,
   PRIMARY KEY (`id`),
   INDEX `fk_payment_costumer_idx` (`costumer_id` ASC) VISIBLE,
-  INDEX `fk_payment_costumer_card1_idx` (`costumer_card_id` ASC) VISIBLE,
+  INDEX `fk_payment_costumer_card1_idx` (`payment_card_id` ASC) VISIBLE,
   CONSTRAINT `fk_payment_costumer`
     FOREIGN KEY (`costumer_id`)
     REFERENCES `moon`.`costumer` (`id`),
   CONSTRAINT `fk_payment_costumer_card1`
-    FOREIGN KEY (`costumer_card_id`)
+    FOREIGN KEY (`payment_card_id`)
     REFERENCES `moon`.`payment_card` (`id`))
 ENGINE = InnoDB
 AUTO_INCREMENT = 2

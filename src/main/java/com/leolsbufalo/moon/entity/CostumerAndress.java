@@ -13,7 +13,7 @@ public class CostumerAndress {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     @OneToOne(mappedBy = "costumerAndress", fetch = FetchType.LAZY)
-    private Payment payment;
+    private Costumer costumer;
     private String street;
     private String number;
     private String complement;
@@ -40,12 +40,12 @@ public class CostumerAndress {
         this.id = id;
     }
 
-    public Payment getPayment() {
-        return payment;
+    public Costumer getCostumer() {
+        return costumer;
     }
 
-    public void setPayment(Payment payment) {
-        this.payment = payment;
+    public void setCostumer(Costumer costumer) {
+        this.costumer = costumer;
     }
 
     public String getStreet() {
@@ -113,7 +113,7 @@ public class CostumerAndress {
     public String toString() {
         return "CostumerAndress{" +
                 "id=" + id +
-                ", payment=" + payment +
+                ", payment=" + costumer +
                 ", street='" + street + '\'' +
                 ", number=" + number +
                 ", complement='" + complement + '\'' +

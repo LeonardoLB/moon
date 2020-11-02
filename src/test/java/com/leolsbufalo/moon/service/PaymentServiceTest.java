@@ -55,10 +55,10 @@ public class PaymentServiceTest {
                 "BRL",
                 1050,
                 1,
-                List.of( new Item("Shield of the gods",
+                List.of( new PaymentItem("Shield of the gods",
                         1,
                         1050)),
-                new CostumerCard(
+                new PaymentCard(
                         "credit card",
                         "00009123454345",
                         001,
@@ -66,14 +66,6 @@ public class PaymentServiceTest {
                         "09890809800",
                         04,
                         2060),
-                new CostumerAndress(
-                        "Stret Septima Zenobia",
-                        "90",
-                        "Paralel universe",
-                        "SP",
-                        "Athenas",
-                        "greek",
-                        0000000),
                 new Costumer(
                         "Septima Zenobia",
                         "septimazenobia@email.com",
@@ -81,6 +73,17 @@ public class PaymentServiceTest {
                         01,
                         900009900,
                         "03/03/01",
-                        "09890809800"));
+                        "09890809800",
+                        new CostumerAndress(
+                                "Stret Septima Zenobia",
+                                "90",
+                                "Paralel universe",
+                                "SP",
+                                "Athenas",
+                                "greek",
+                                0000000
+                        )
+                )
+        );
     }
 }

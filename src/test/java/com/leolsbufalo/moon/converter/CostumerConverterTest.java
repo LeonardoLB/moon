@@ -1,6 +1,8 @@
 package com.leolsbufalo.moon.converter;
 
 import com.leolsbufalo.moon.entity.Costumer;
+import com.leolsbufalo.moon.entity.CostumerAndress;
+import com.leolsbufalo.moon.model.CostumerAndressModel;
 import com.leolsbufalo.moon.model.CostumerModel;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -49,7 +51,16 @@ public class CostumerConverterTest {
                 11,
                 931902304,
                 "03/03/03",
-                "06200450005");
+                "06200450005",
+                new CostumerAndressModel(
+                        "Stret Septima Zenobia",
+                        "90",
+                        "Paralel universe",
+                        "SP",
+                        "Athenas",
+                        "greek",
+                        0000000
+                ));
     }
 
     public Costumer costumerEntityMock() {
@@ -60,7 +71,16 @@ public class CostumerConverterTest {
                 11,
                 931902304,
                 "03/03/03",
-                "06200450005");
+                "06200450005",
+                new CostumerAndress(
+                        "Stret Septima Zenobia",
+                        "90",
+                        "Paralel universe",
+                        "SP",
+                        "Athenas",
+                        "greek",
+                        0000000
+                ));
     }
 
 }

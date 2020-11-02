@@ -6,8 +6,8 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "costumer_card")
-public class CostumerCard {
+@Table(name = "payment_card")
+public class PaymentCard {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -22,7 +22,7 @@ public class CostumerCard {
     private int expirationMonth;
     private int expirationYear;
 
-    public CostumerCard(String method, String number, int cvc, String name, String documentNumber, int expirationMonth, int expirationYear) {
+    public PaymentCard(String method, String number, int cvc, String name, String documentNumber, int expirationMonth, int expirationYear) {
         this.method = method;
         this.number = number;
         this.cvc = cvc;

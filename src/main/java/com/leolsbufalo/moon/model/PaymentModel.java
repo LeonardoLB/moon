@@ -23,17 +23,14 @@ public class PaymentModel {
     @Valid
     private CostumerCardModel costumerCard;
     @Valid
-    private CostumerAndressModel costumerAndress;
-    @Valid
     private CostumerModel costumer;
 
-    public PaymentModel(String currency, int valueInCents, int installments, List<ItemModel> items, CostumerCardModel costumerCard, CostumerAndressModel costumerAndress, CostumerModel costumer) {
+    public PaymentModel(String currency, int valueInCents, int installments, List<ItemModel> items, CostumerCardModel costumerCard, CostumerModel costumer) {
         this.currency = currency;
         this.valueInCents = valueInCents;
         this.installments = installments;
         this.items = items;
         this.costumerCard = costumerCard;
-        this.costumerAndress = costumerAndress;
         this.costumer = costumer;
     }
 
@@ -87,14 +84,6 @@ public class PaymentModel {
         this.costumerCard = costumerCard;
     }
 
-    public CostumerAndressModel getCostumerAndress() {
-        return costumerAndress;
-    }
-
-    public void setCostumerAndress(CostumerAndressModel costumerAndress) {
-        this.costumerAndress = costumerAndress;
-    }
-
     public CostumerModel getCostumer() {
         return costumer;
     }
@@ -111,7 +100,6 @@ public class PaymentModel {
                 ", installments=" + installments +
                 ", items=" + items +
                 ", costumerCard=" + costumerCard +
-                ", costumerAndress=" + costumerAndress +
                 ", costumers=" + costumer +
                 '}';
     }

@@ -22,7 +22,11 @@ public class Costumer {
     private String birthDate;
     private String documentNumber;
 
-    public Costumer(String name, String email, int phoneCountryCode, int phoneAreaCode, int phoneNumber, String birthDate, String documentNumber) {
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "costumer_andress_id", referencedColumnName = "id")
+    private CostumerAndress costumerAndress;
+
+    public Costumer(String name, String email, int phoneCountryCode, int phoneAreaCode, int phoneNumber, String birthDate, String documentNumber, CostumerAndress costumerAndress) {
         this.name = name;
         this.email = email;
         this.phoneCountryCode = phoneCountryCode;
@@ -30,6 +34,7 @@ public class Costumer {
         this.phoneNumber = phoneNumber;
         this.birthDate = birthDate;
         this.documentNumber = documentNumber;
+        this.costumerAndress = costumerAndress;
     }
 
     public int getId() {
@@ -102,6 +107,14 @@ public class Costumer {
 
     public void setDocumentNumber(String documentNumber) {
         this.documentNumber = documentNumber;
+    }
+
+    public CostumerAndress getCostumerAndress() {
+        return costumerAndress;
+    }
+
+    public void setCostumerAndress(CostumerAndress costumerAndress) {
+        this.costumerAndress = costumerAndress;
     }
 
     public String toJson() throws JsonProcessingException {

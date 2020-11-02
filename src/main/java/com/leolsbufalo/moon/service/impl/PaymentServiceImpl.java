@@ -19,6 +19,7 @@ public class PaymentServiceImpl implements PaymentService {
     @Override
     public Payment createPayment(Payment payment) {
         try {
+            System.out.println(payment);
             paymentRepository.save(payment);
             return paymentProducer.send(payment);
 

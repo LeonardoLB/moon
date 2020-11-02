@@ -19,29 +19,24 @@ public class Payment {
     private int installments;
 
     @OneToMany(mappedBy = "payment", fetch = FetchType.LAZY)
-    private List<Item> items;
+    private List<PaymentItem> PaymentItems;
 
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "costumer_card_id", referencedColumnName = "id")
-    private CostumerCard costumerCard;
-
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "costumer_andress_id", referencedColumnName = "id")
-    private CostumerAndress costumerAndress;
+    @JoinColumn(name = "payment_card_id", referencedColumnName = "id")
+    private PaymentCard costumerCard;
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "costumer_id", referencedColumnName = "id")
     private Costumer costumer;
 
 
-    public Payment(String unique_id, String currency, int valueInCents, int installments, List<Item> items, CostumerCard costumerCard, CostumerAndress costumerAndress, Costumer costumer) {
+    public Payment(String unique_id, String currency, int valueInCents, int installments, List<PaymentItem> PaymentItems, PaymentCard costumerCard, Costumer costumer) {
         this.unique_id = unique_id;
         this.currency = currency;
         this.valueInCents = valueInCents;
         this.installments = installments;
-        this.items = items;
+        this.PaymentItems = PaymentItems;
         this.costumerCard = costumerCard;
-        this.costumerAndress = costumerAndress;
         this.costumer = costumer;
     }
 
@@ -83,26 +78,18 @@ public class Payment {
         this.installments = installments;
     }
 
-    public List<Item> getItems() {
-        return items;
+    public List<PaymentItem> getItems() {
+        return PaymentItems;
     }
 
-    public void setItems(List<Item> items) {
-        this.items = items;
+    public void setItems(List<PaymentItem> PaymentItems) {
+        this.PaymentItems = PaymentItems;
     }
 
-    public CostumerCard getCostumerCard() { return costumerCard; }
+    public PaymentCard getCostumerCard() { return costumerCard; }
 
-    public void setCostumerCard(CostumerCard costumerCard) {
+    public void setCostumerCard(PaymentCard costumerCard) {
         this.costumerCard = costumerCard;
-    }
-
-    public CostumerAndress getCostumerAndress() {
-        return costumerAndress;
-    }
-
-    public void setCostumerAndress(CostumerAndress costumerAndress) {
-        this.costumerAndress = costumerAndress;
     }
 
     public Costumer getCostumer() {
@@ -130,9 +117,8 @@ public class Payment {
                 ", currency='" + currency + '\'' +
                 ", valueInCents=" + valueInCents +
                 ", installments=" + installments +
-                ", items=" + items +
+                ", items=" + PaymentItems +
                 ", costumerCard=" + costumerCard +
-                ", costumerAndress=" + costumerAndress +
                 ", costumer=" + costumer +
                 '}';
     }

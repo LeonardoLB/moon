@@ -5,6 +5,8 @@ import com.leolsbufalo.moon.model.CostumerModel;
 
 public class CostumerConverter extends Converter<CostumerModel, Costumer> {
 
+    private static CostumerAndressConverter costumerAndressConverter = new CostumerAndressConverter();
+
     public CostumerConverter() {
         super(CostumerConverter::convertToCostumerEntity, CostumerConverter::convertToCostumerModel);
     }
@@ -17,7 +19,8 @@ public class CostumerConverter extends Converter<CostumerModel, Costumer> {
                 costumer.getPhoneAreaCode(),
                 costumer.getPhoneNumber(),
                 costumer.getBirthDate(),
-                costumer.getDocumentNumber()
+                costumer.getDocumentNumber(),
+                costumerAndressConverter.convertToCostumerAndressModel(costumer.getCostumerAndress())
         );
     }
 
@@ -29,7 +32,8 @@ public class CostumerConverter extends Converter<CostumerModel, Costumer> {
                 costumerModel.getPhoneAreaCode(),
                 costumerModel.getPhoneNumber(),
                 costumerModel.getBirthDate(),
-                costumerModel.getDocumentNumber()
+                costumerModel.getDocumentNumber(),
+                costumerAndressConverter.convertToCostumerAndressEntity(costumerModel.getCostumerAndressModel())
         );
     }
 }
