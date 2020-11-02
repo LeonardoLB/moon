@@ -21,6 +21,6 @@ Some of this items I had some help and revision from a Senior of my team (Lindem
 - Config Start Kafka in Docker-compose Init Config
 - ✅ Create producer to Kafka
 - ✅ Validate Costumer andress properties, it can have letter and numbers
-- Entitys relacionship  
+- ✅ Entities relationship  
 - ✅ Error Object name 
 - ✅ Implement UUID 
