@@ -24,3 +24,4 @@ Some of this items I had some help and revision from a Senior of my team (Lindem
 - ✅ Entities relationship  
 - ✅ Error Object name 
 - ✅ Implement UUID 
+- ✅ SonarQube to code quality 
