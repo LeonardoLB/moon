@@ -58,7 +58,7 @@ services:
     image: sheepkiller/kafka-manager:latest
     container_name: moon-kafka-manager
     ports:
-      - "9000:9000"
+      - "9009:9009"
     links:
       - zookeeper
       - kafka
