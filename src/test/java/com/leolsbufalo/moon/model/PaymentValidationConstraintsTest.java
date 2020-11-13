@@ -17,13 +17,12 @@ import java.util.Set;
 import static org.junit.jupiter.api.Assertions.*;
 
 @RunWith(MockitoJUnitRunner.class)
-public class PaymentValidationconstraintsTest {
+public class PaymentValidationConstraintsTest {
 
     private static Validator validator;
 
     @BeforeEach
     public void setUp() {
-        MockitoAnnotations.initMocks(this);
         ValidatorFactory factory = Validation.buildDefaultValidatorFactory();
         validator = factory.getValidator();
     }

@@ -95,7 +95,7 @@ public class PaymentCardModel {
 
     @Override
     public String toString() {
-        return "CostumerCardModel{" +
+        return "PaymentCardModel{" +
                 "method='" + method + '\'' +
                 ", number='" + number + '\'' +
                 ", cvc=" + cvc +

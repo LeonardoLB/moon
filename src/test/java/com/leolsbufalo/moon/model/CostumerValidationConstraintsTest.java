@@ -28,7 +28,7 @@ public class CostumerValidationConstraintsTest {
     }
 
     @Test
-    public void createPaymentItemModelWithWrongPriceInCents() {
+    public void createCostumerModelWithWrongPriceInCents() {
 
         CostumerModel costumerModel = createCostumerModel();
 
@@ -40,7 +40,7 @@ public class CostumerValidationConstraintsTest {
     }
 
     @Test
-    public void createPaymentItemModelWithWrongEmail() {
+    public void createCostumerModelWithWrongEmail() {
 
         CostumerModel costumerModel = createCostumerModel();
 
@@ -52,7 +52,7 @@ public class CostumerValidationConstraintsTest {
     }
 
     @Test
-    public void createPaymentItemModelWithWrongPhoneCountryCode() {
+    public void createCostumerModelWithWrongPhoneCountryCode() {
 
         CostumerModel costumerModel = createCostumerModel();
 
@@ -64,7 +64,7 @@ public class CostumerValidationConstraintsTest {
     }
 
     @Test
-    public void createPaymentItemModelWithWrongPhoneAreaCode() {
+    public void createCostumerModelWithWrongPhoneAreaCode() {
 
         CostumerModel costumerModel = createCostumerModel();
 
@@ -76,7 +76,7 @@ public class CostumerValidationConstraintsTest {
     }
 
     @Test
-    public void createPaymentItemModelWithWrongPhoneNumber() {
+    public void createCostumerModelWithWrongPhoneNumber() {
 
         CostumerModel costumerModel = createCostumerModel();
 
@@ -88,7 +88,7 @@ public class CostumerValidationConstraintsTest {
     }
 
     @Test
-    public void createPaymentItemModelWithWrongBirthDate() {
+    public void createCostumerModelWithWrongBirthDate() {
 
         CostumerModel costumerModel = createCostumerModel();
 
@@ -100,7 +100,7 @@ public class CostumerValidationConstraintsTest {
     }
 
     @Test
-    public void createPaymentItemModelWithDocumentNumber() {
+    public void createCostumerWithWrongDocumentNumber() {
 
         CostumerModel costumerModel = createCostumerModel();
 

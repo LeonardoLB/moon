@@ -48,7 +48,7 @@ public class PaymentItemModel {
 
     @Override
     public String toString() {
-        return "ItemModel{" +
+        return "PaymentItemModel{" +
                 "description='" + description + '\'' +
                 ", quantity=" + quantity +
                 ", priceInCents=" + priceInCents +
