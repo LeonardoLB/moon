@@ -59,6 +59,17 @@ public class PaymentServiceTest {
         assertNotEquals(payment, paymentCreated);
     }
 
+    @Test
+    public void createPaymentWithoutReturnTest() {
+
+        Mockito.when(paymentRepository.save(payment)).thenReturn(null);
+        Mockito.when(paymentProducer.send(payment)).thenReturn(null);
+
+        Payment paymentCreated = paymentServiceImpl.createPayment(payment);
+
+        assertNull(paymentCreated);
+    }
+
 
     public static Payment createPaymentEntity() {
         return new Payment(

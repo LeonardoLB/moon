@@ -1,6 +1,5 @@
-package com.leolsbufalo.moon.service;
+package com.leolsbufalo.moon.model;
 
-import com.leolsbufalo.moon.model.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
@@ -18,7 +17,7 @@ import java.util.Set;
 import static org.junit.jupiter.api.Assertions.*;
 
 @RunWith(MockitoJUnitRunner.class)
-public class PaymentValidationContrainsTest {
+public class PaymentValidationconstraintsTest {
 
     private static Validator validator;
 
@@ -71,10 +70,10 @@ public class PaymentValidationContrainsTest {
                 "BRL",
                 1050,
                 1,
-                List.of( new ItemModel("Shield of the gods",
+                List.of( new PaymentItemModel("Shield of the gods",
                         1,
                         1050)),
-                new CostumerCardModel(
+                new PaymentCardModel(
                         "credit card",
                         "00009123454345",
                         001,
