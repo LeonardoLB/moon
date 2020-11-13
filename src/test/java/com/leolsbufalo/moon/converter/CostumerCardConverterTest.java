@@ -1,7 +1,7 @@
 package com.leolsbufalo.moon.converter;
 
 import com.leolsbufalo.moon.entity.PaymentCard;
-import com.leolsbufalo.moon.model.CostumerCardModel;
+import com.leolsbufalo.moon.model.PaymentCardModel;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -11,17 +11,17 @@ public class CostumerCardConverterTest {
     @Test
     public void convertCostumerToEntityTest(){
 
-        CostumerCardModel costumerCardModel = costumerCardModelMock();
+        PaymentCardModel paymentCardModel = costumerCardModelMock();
 
         PaymentCard costumerCardConverted = new PaymentCardConverter().convertFromDto(costumerCardModelMock());
 
-        assertEquals(costumerCardConverted.getMethod(), costumerCardModel.getMethod(), "method must be equal");
-        assertEquals(costumerCardConverted.getNumber(), costumerCardModel.getNumber(), "number must be equal");
-        assertEquals(costumerCardConverted.getCvc(), costumerCardModel.getCvc(), "cvc must be equal");
-        assertEquals(costumerCardConverted.getName(), costumerCardModel.getName(), "name must be equal");
-        assertEquals(costumerCardConverted.getDocumentNumber(), costumerCardModel.getDocumentNumber(), "document number must be equal");
-        assertEquals(costumerCardConverted.getExpirationMonth(), costumerCardModel.getExpirationMonth(), "Expiration Month must be equal");
-        assertEquals(costumerCardConverted.getExpirationYear(), costumerCardModel.getExpirationYear(), "Expiration year must be equal");
+        assertEquals(costumerCardConverted.getMethod(), paymentCardModel.getMethod(), "method must be equal");
+        assertEquals(costumerCardConverted.getNumber(), paymentCardModel.getNumber(), "number must be equal");
+        assertEquals(costumerCardConverted.getCvc(), paymentCardModel.getCvc(), "cvc must be equal");
+        assertEquals(costumerCardConverted.getName(), paymentCardModel.getName(), "name must be equal");
+        assertEquals(costumerCardConverted.getDocumentNumber(), paymentCardModel.getDocumentNumber(), "document number must be equal");
+        assertEquals(costumerCardConverted.getExpirationMonth(), paymentCardModel.getExpirationMonth(), "Expiration Month must be equal");
+        assertEquals(costumerCardConverted.getExpirationYear(), paymentCardModel.getExpirationYear(), "Expiration year must be equal");
 
     }
 
@@ -30,15 +30,15 @@ public class CostumerCardConverterTest {
 
         PaymentCard costumerCard = costumerCardEntityMock();
 
-        CostumerCardModel costumerCardModelConverted = new PaymentCardConverter().convertFromEntity(costumerCardEntityMock());
+        PaymentCardModel paymentCardModelConverted = new PaymentCardConverter().convertFromEntity(costumerCardEntityMock());
 
-        assertEquals(costumerCardModelConverted.getMethod(), costumerCard.getMethod(), "method must be equal");
-        assertEquals(costumerCardModelConverted.getNumber(), costumerCard.getNumber(), "number must be equal");
-        assertEquals(costumerCardModelConverted.getCvc(), costumerCard.getCvc(), "cvc must be equal");
-        assertEquals(costumerCardModelConverted.getName(), costumerCard.getName(), "name must be equal");
-        assertEquals(costumerCardModelConverted.getDocumentNumber(), costumerCard.getDocumentNumber(), "document number must be equal");
-        assertEquals(costumerCardModelConverted.getExpirationMonth(), costumerCard.getExpirationMonth(), "Expiration Month must be equal");
-        assertEquals(costumerCardModelConverted.getExpirationYear(), costumerCard.getExpirationYear(), "Expiration year must be equal");
+        assertEquals(paymentCardModelConverted.getMethod(), costumerCard.getMethod(), "method must be equal");
+        assertEquals(paymentCardModelConverted.getNumber(), costumerCard.getNumber(), "number must be equal");
+        assertEquals(paymentCardModelConverted.getCvc(), costumerCard.getCvc(), "cvc must be equal");
+        assertEquals(paymentCardModelConverted.getName(), costumerCard.getName(), "name must be equal");
+        assertEquals(paymentCardModelConverted.getDocumentNumber(), costumerCard.getDocumentNumber(), "document number must be equal");
+        assertEquals(paymentCardModelConverted.getExpirationMonth(), costumerCard.getExpirationMonth(), "Expiration Month must be equal");
+        assertEquals(paymentCardModelConverted.getExpirationYear(), costumerCard.getExpirationYear(), "Expiration year must be equal");
 
     }
 
@@ -54,8 +54,8 @@ public class CostumerCardConverterTest {
                 2030);
     }
 
-    public CostumerCardModel costumerCardModelMock() {
-        return new CostumerCardModel(
+    public PaymentCardModel costumerCardModelMock() {
+        return new PaymentCardModel(
                 "credit card",
                 "909909909909909",
                 000,

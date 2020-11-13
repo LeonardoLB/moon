@@ -3,7 +3,7 @@ package com.leolsbufalo.moon.model;
 
 import javax.validation.constraints.*;
 
-public class CostumerCardModel {
+public class PaymentCardModel {
     @NotNull
     @Pattern(regexp = "[a-zA-Z ]{0,20}", message = "Bad Method, just use letters")
     private String method;
@@ -27,7 +27,7 @@ public class CostumerCardModel {
     @Min(value = 1930, message = "Value must be bigger than 1930")
     private int expirationYear;
 
-    public CostumerCardModel(String method, String number, int cvc, String name, String documentNumber, int expirationMonth, int expirationYear) {
+    public PaymentCardModel(String method, String number, int cvc, String name, String documentNumber, int expirationMonth, int expirationYear) {
         this.method = method;
         this.number = number;
         this.cvc = cvc;

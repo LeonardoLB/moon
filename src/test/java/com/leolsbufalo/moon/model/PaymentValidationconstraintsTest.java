@@ -66,9 +66,6 @@ public class PaymentValidationContrainsTest {
     }
 
 
-
-
-
     public static PaymentModel createPaymentModel() {
         return new PaymentModel(
                 "BRL",

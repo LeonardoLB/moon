@@ -1,16 +1,16 @@
 package com.leolsbufalo.moon.converter;
 
 import com.leolsbufalo.moon.entity.PaymentCard;
-import com.leolsbufalo.moon.model.CostumerCardModel;
+import com.leolsbufalo.moon.model.PaymentCardModel;
 
-public class PaymentCardConverter extends Converter<CostumerCardModel, PaymentCard> {
+public class PaymentCardConverter extends Converter<PaymentCardModel, PaymentCard> {
 
     public PaymentCardConverter() {
         super(PaymentCardConverter::convertToPaymentCardEntity, PaymentCardConverter::convertToPaymentCardModel);
     }
 
-    public static CostumerCardModel convertToPaymentCardModel(PaymentCard costumerCard) {
-        return new CostumerCardModel(
+    public static PaymentCardModel convertToPaymentCardModel(PaymentCard costumerCard) {
+        return new PaymentCardModel(
                 costumerCard.getMethod(),
                 costumerCard.getNumber(),
                 costumerCard.getCvc(),
@@ -21,15 +21,15 @@ public class PaymentCardConverter extends Converter<CostumerCardModel, PaymentCa
         );
     }
 
-    public static PaymentCard convertToPaymentCardEntity(CostumerCardModel costumerCardModel) {
+    public static PaymentCard convertToPaymentCardEntity(PaymentCardModel paymentCardModel) {
         return new PaymentCard(
-                costumerCardModel.getMethod(),
-                costumerCardModel.getNumber(),
-                costumerCardModel.getCvc(),
-                costumerCardModel.getName(),
-                costumerCardModel.getDocumentNumber(),
-                costumerCardModel.getExpirationMonth(),
-                costumerCardModel.getExpirationYear()
+                paymentCardModel.getMethod(),
+                paymentCardModel.getNumber(),
+                paymentCardModel.getCvc(),
+                paymentCardModel.getName(),
+                paymentCardModel.getDocumentNumber(),
+                paymentCardModel.getExpirationMonth(),
+                paymentCardModel.getExpirationYear()
         );
     }
 

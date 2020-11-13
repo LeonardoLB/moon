@@ -19,13 +19,13 @@ public class PaymentModel {
     @Min(value = 1, message = "Value must be bigger than 0")
     private int installments;
     @Valid
-    private List<ItemModel> items;
+    private List<PaymentItemModel> items;
     @Valid
-    private CostumerCardModel costumerCard;
+    private PaymentCardModel costumerCard;
     @Valid
     private CostumerModel costumer;
 
-    public PaymentModel(String currency, int valueInCents, int installments, List<ItemModel> items, CostumerCardModel costumerCard, CostumerModel costumer) {
+    public PaymentModel(String currency, int valueInCents, int installments, List<PaymentItemModel> items, PaymentCardModel costumerCard, CostumerModel costumer) {
         this.currency = currency;
         this.valueInCents = valueInCents;
         this.installments = installments;
@@ -68,19 +68,19 @@ public class PaymentModel {
         this.installments = installments;
     }
 
-    public List<ItemModel> getItems() {
+    public List<PaymentItemModel> getItems() {
         return items;
     }
 
-    public void setItems(List<ItemModel> items) {
+    public void setItems(List<PaymentItemModel> items) {
         this.items = items;
     }
 
-    public CostumerCardModel getCostumerCard() {
+    public PaymentCardModel getCostumerCard() {
         return costumerCard;
     }
 
-    public void setCostumerCard(CostumerCardModel costumerCard) {
+    public void setCostumerCard(PaymentCardModel costumerCard) {
         this.costumerCard = costumerCard;
     }
 

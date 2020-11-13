@@ -5,7 +5,7 @@ import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 
-public class ItemModel {
+public class PaymentItemModel {
     @NotNull(message = "Bad Currency, must not be null")
     @Pattern(regexp = "[A-Za-z ]{0,255}", message = "Bad Description, just use letters")
     private String description;
@@ -16,7 +16,7 @@ public class ItemModel {
     @Min(value = 1, message = "Value must be bigger than 0")
     private int priceInCents;
 
-    public ItemModel(String description, int quantity, int priceInCents) {
+    public PaymentItemModel(String description, int quantity, int priceInCents) {
         this.description = description;
         this.quantity = quantity;
         this.priceInCents = priceInCents;
