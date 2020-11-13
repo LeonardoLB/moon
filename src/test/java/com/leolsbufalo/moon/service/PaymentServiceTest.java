@@ -13,9 +13,9 @@ import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 import org.mockito.junit.MockitoJUnitRunner;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
 import java.util.List;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 @RunWith(MockitoJUnitRunner.class)
 public class PaymentServiceTest {
@@ -46,6 +46,17 @@ public class PaymentServiceTest {
         Payment paymentCreated = paymentServiceImpl.createPayment(payment);
 
         assertEquals(paymentCreated, payment);
+    }
+
+    @Test
+    public void createPaymentTestWithDifferentOneParameter() {
+
+        Mockito.when(paymentRepository.save(payment)).thenReturn(payment);
+
+        payment.setCurrency("");
+        Payment paymentCreated = paymentServiceImpl.createPayment(payment);
+
+        assertNotEquals(payment, paymentCreated);
     }
 
 
