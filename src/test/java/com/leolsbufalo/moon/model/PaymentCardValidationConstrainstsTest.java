@@ -31,15 +31,88 @@ public class PaymentCardValidationConstrainstsTest {
 
         PaymentCardModel paymentCardModel = createPaymentCardModel();
 
-        paymentCardModel.setMethod("credit @card");
+        paymentCardModel.setMethod("abc123@");
 
         Set<ConstraintViolation<PaymentCardModel>> violations = validator.validate(paymentCardModel);
 
-        assertTrue(violations.size() > 1);
+        assertFalse(violations.isEmpty());
+    }
+
+    @Test
+    public void createPaymenCardtWithWrongNumber() {
+
+        PaymentCardModel paymentCardModel = createPaymentCardModel();
+
+        paymentCardModel.setNumber("abc123");
+
+        Set<ConstraintViolation<PaymentCardModel>> violations = validator.validate(paymentCardModel);
+
+        assertFalse(violations.isEmpty());
+    }
+
+    @Test
+    public void createPaymenCardtWithWrongCVC() {
+
+        PaymentCardModel paymentCardModel = createPaymentCardModel();
+
+        paymentCardModel.setCvc(2340);
+
+        Set<ConstraintViolation<PaymentCardModel>> violations = validator.validate(paymentCardModel);
+
+        assertFalse(violations.isEmpty());
+    }
+
+    @Test
+    public void createPaymenCardtWithWrongName() {
+
+        PaymentCardModel paymentCardModel = createPaymentCardModel();
+
+        paymentCardModel.setName("ln0rd");
+
+        Set<ConstraintViolation<PaymentCardModel>> violations = validator.validate(paymentCardModel);
+
+        assertFalse(violations.isEmpty());
+    }
+
+    @Test
+    public void createPaymenCardtWithWrongDocumentNumber() {
+
+        PaymentCardModel paymentCardModel = createPaymentCardModel();
+
+        paymentCardModel.setDocumentNumber("ln0rd");
+
+        Set<ConstraintViolation<PaymentCardModel>> violations = validator.validate(paymentCardModel);
+
+        assertFalse(violations.isEmpty());
+    }
+
+    @Test
+    public void createPaymenCardtWithWrongExpirantionMounth() {
+
+        PaymentCardModel paymentCardModel = createPaymentCardModel();
+
+        paymentCardModel.setExpirationMonth(13);
+
+        Set<ConstraintViolation<PaymentCardModel>> violations = validator.validate(paymentCardModel);
+
+        assertFalse(violations.isEmpty());
+    }
+
+    @Test
+    public void createPaymenCardtWithWrongExpirantionYear() {
+
+        PaymentCardModel paymentCardModel = createPaymentCardModel();
+
+        paymentCardModel.setExpirationYear(1929);
+
+        Set<ConstraintViolation<PaymentCardModel>> violations = validator.validate(paymentCardModel);
+
+        assertFalse(violations.isEmpty());
     }
 
     public PaymentCardModel createPaymentCardModel() {
-        return new PaymentCardModel ("credit card",
+        return new PaymentCardModel (
+                "credit card",
                 "00009123454345",
                 001,
                 "Septima Zenobia",

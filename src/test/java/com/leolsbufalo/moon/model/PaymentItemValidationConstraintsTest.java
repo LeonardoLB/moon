@@ -1,6 +1,7 @@
 package com.leolsbufalo.moon.model;
 
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.mockito.MockitoAnnotations;
 import org.mockito.junit.MockitoJUnitRunner;
@@ -15,16 +16,18 @@ import java.util.Set;
 import static org.junit.jupiter.api.Assertions.*;
 
 @RunWith(MockitoJUnitRunner.class)
-public class ItemValidationConstraintsTest {
+public class PaymentItemValidationConstraintsTest {
 
     private static Validator validator;
 
     @BeforeEach
     public void setUp() {
+        MockitoAnnotations.initMocks(this);
         ValidatorFactory factory = Validation.buildDefaultValidatorFactory();
         validator = factory.getValidator();
     }
 
+    @Test
     public void createPaymentItemModelWithWrongDescription() {
 
         PaymentItemModel paymentItemModel = createPaymentItemModel();
@@ -33,9 +36,10 @@ public class ItemValidationConstraintsTest {
 
         Set<ConstraintViolation<PaymentItemModel>> violations = validator.validate(paymentItemModel);
 
-        assertTrue(violations.size() > 1);
+        assertFalse(violations.isEmpty());
     }
 
+    @Test
     public void createPaymentItemModelWithWrongQuantity() {
 
         PaymentItemModel paymentItemModel = createPaymentItemModel();
@@ -44,9 +48,10 @@ public class ItemValidationConstraintsTest {
 
         Set<ConstraintViolation<PaymentItemModel>> violations = validator.validate(paymentItemModel);
 
-        assertTrue(violations.size() > 1);
+        assertFalse(violations.isEmpty());
     }
 
+    @Test
     public void createPaymentItemModelWithWrongPriceInCents() {
 
         PaymentItemModel paymentItemModel = createPaymentItemModel();
@@ -55,7 +60,7 @@ public class ItemValidationConstraintsTest {
 
         Set<ConstraintViolation<PaymentItemModel>> violations = validator.validate(paymentItemModel);
 
-        assertTrue(violations.size() > 1);
+        assertFalse(violations.isEmpty());
     }
 
     public PaymentItemModel createPaymentItemModel() {

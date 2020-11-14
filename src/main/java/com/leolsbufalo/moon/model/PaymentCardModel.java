@@ -2,6 +2,7 @@ package com.leolsbufalo.moon.model;
 
 
 import javax.validation.constraints.*;
+import java.util.Calendar;
 
 public class PaymentCardModel {
     @NotNull
@@ -24,7 +25,7 @@ public class PaymentCardModel {
     @Max(value = 12, message = "Value must be equal or less than 12")
     private int expirationMonth;
     @NotNull
-    @Min(value = 1930, message = "Value must be bigger than 1930")
+    @Min(value = 2000, message = "Value must be bigger than 1930")
     private int expirationYear;
 
     public PaymentCardModel(String method, String number, int cvc, String name, String documentNumber, int expirationMonth, int expirationYear) {
