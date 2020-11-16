@@ -24,9 +24,11 @@ docker-compose up --build
 
 <img src="https://github.com/ln0rd/moon/blob/master/docs/structureImg.png" alt="alt text" width="600">
 
+## UML
+
+[Link to image](https://github.com/ln0rd/moon/blob/master/docs/databaseRelacion.md)
 
 ## Postman Documentation
-Link:
 ```
 https://documenter.getpostman.com/view/5267825/TVRhbpDN
 ```
@@ -39,8 +41,8 @@ Starting to use conventional commits pattern, keep this pattern commit:
 `[test]` for new tests and fix them <br />
 `[docs]` for change a document <br />
 `[chore]` for some pre defined chore <br />
+`[refactor]` for some refector done <br />
 
-Follow link:
 ```
 https://www.conventionalcommits.org/en/v1.0.0-beta.2/
 ```
