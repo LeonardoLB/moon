@@ -20,6 +20,9 @@ save it and send to a Kafka queue.
 docker-compose up --build
 ```
 
+## Architecture
+
+<img src="https://github.com/ln0rd/moon/blob/master/docs/structure.png" alt="alt text" width="300">
 
 ## Postman Documentation
 Link:
