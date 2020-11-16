@@ -22,7 +22,8 @@ docker-compose up --build
 
 ## Architecture
 
-<img src="https://github.com/ln0rd/moon/blob/master/docs/structure.png" alt="alt text" width="600">
+<img src="https://github.com/ln0rd/moon/blob/master/docs/structureImg.png" alt="alt text" width="600">
+
 
 ## Postman Documentation
 Link:
