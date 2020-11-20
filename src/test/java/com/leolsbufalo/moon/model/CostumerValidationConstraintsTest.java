@@ -22,7 +22,6 @@ public class CostumerValidationConstraintsTest {
 
     @BeforeEach
     public void setUp() {
-        MockitoAnnotations.initMocks(this);
         ValidatorFactory factory = Validation.buildDefaultValidatorFactory();
         validator = factory.getValidator();
     }
@@ -60,7 +59,7 @@ public class CostumerValidationConstraintsTest {
 
         Set<ConstraintViolation<CostumerModel>> violations = validator.validate(costumerModel);
 
-        assertTrue(violations.size() > 1);
+        assertFalse(violations.isEmpty());
     }
 
     @Test
@@ -72,7 +71,7 @@ public class CostumerValidationConstraintsTest {
 
         Set<ConstraintViolation<CostumerModel>> violations = validator.validate(costumerModel);
 
-        assertTrue(violations.size() > 1);
+        assertFalse(violations.isEmpty());
     }
 
     @Test
@@ -96,7 +95,7 @@ public class CostumerValidationConstraintsTest {
 
         Set<ConstraintViolation<CostumerModel>> violations = validator.validate(costumerModel);
 
-        assertTrue(violations.size() > 1);
+        assertFalse(violations.isEmpty());
     }
 
     @Test
@@ -111,8 +110,20 @@ public class CostumerValidationConstraintsTest {
         assertTrue(violations.size() > 1);
     }
 
+    @Test
+    public void createCostumerModelWithAllCorrectContent() {
+
+        CostumerModel costumerModel = createCostumerModel();
+
+        Set<ConstraintViolation<CostumerModel>> violations = validator.validate(costumerModel);
+
+        assertFalse(violations.size() > 1);
+    }
+
+
     public CostumerModel createCostumerModel() {
-        return new CostumerModel("Septima Zenobia",
+        return new CostumerModel(
+                "Septima Zenobia",
                 "septimazenobia@email.com",
                 00,
                 01,
@@ -126,7 +137,7 @@ public class CostumerValidationConstraintsTest {
                         "SP",
                         "Athenas",
                         "greek",
-                        0000000
+                        23401
                 )
         );
     }

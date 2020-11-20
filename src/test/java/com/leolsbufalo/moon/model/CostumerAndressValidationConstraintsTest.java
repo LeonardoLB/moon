@@ -68,7 +68,7 @@ public class CostumerAndressValidationConstraintsTest {
 
         CostumerAndressModel costumerAndressModel = createCostumerAndressModel();
 
-        costumerAndressModel.setDistrict("SPA");
+        costumerAndressModel.setDistrict("@ SPA");
 
         Set<ConstraintViolation<CostumerAndressModel>> violations = validator.validate(costumerAndressModel);
 
@@ -118,7 +118,7 @@ public class CostumerAndressValidationConstraintsTest {
 
         Set<ConstraintViolation<CostumerAndressModel>> violations = validator.validate(costumerAndressModel);
 
-        assertFalse(violations.isEmpty());
+        assertTrue(violations.isEmpty());
     }
 
     public CostumerAndressModel createCostumerAndressModel() {
@@ -129,7 +129,7 @@ public class CostumerAndressValidationConstraintsTest {
                 "SP",
                 "Athenas",
                 "greek",
-                0000000
+                23401
         );
     }
 }
