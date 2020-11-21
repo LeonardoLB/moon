@@ -12,10 +12,10 @@ public class PaymentModel {
     @NotNull(message = "Bad Currency, must not be null")
     @Pattern(regexp = "[a-zA-Z]{3}", message = "Bad Currency")
     private String currency;
-    @NotNull(message = "Bad Currency, must not be null")
+    @NotNull(message = "Bad Value, must not be null")
     @Min(value = 1, message = "Value must be bigger than 0")
     private Integer valueInCents;
-    @NotNull(message = "Bad Currency, must not be null")
+    @NotNull(message = "Bad Installments, must not be null")
     @Min(value = 1, message = "Value must be bigger than 0")
     private int installments;
     @Valid

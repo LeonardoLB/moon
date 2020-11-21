@@ -36,7 +36,7 @@ public class PaymentValidationConstraintsTest {
 
         Set<ConstraintViolation<PaymentModel>> violations = validator.validate(paymentModel);
 
-        assertTrue(violations.size() > 1);
+        assertFalse(violations.isEmpty());
     }
 
     @Test
@@ -48,7 +48,7 @@ public class PaymentValidationConstraintsTest {
 
         Set<ConstraintViolation<PaymentModel>> violations = validator.validate(paymentModel);
 
-        assertTrue(violations.size() > 1);
+        assertFalse(violations.isEmpty());
     }
 
     @Test
@@ -60,7 +60,17 @@ public class PaymentValidationConstraintsTest {
 
         Set<ConstraintViolation<PaymentModel>> violations = validator.validate(paymentModel);
 
-        assertTrue(violations.size() > 1);
+        assertFalse(violations.isEmpty());
+    }
+
+    @Test
+    public void createPaymentWithAllCorrectContent() {
+
+        PaymentModel paymentModel = createPaymentModel();
+
+        Set<ConstraintViolation<PaymentModel>> violations = validator.validate(paymentModel);
+
+        assertTrue(violations.isEmpty());
     }
 
 
@@ -69,22 +79,23 @@ public class PaymentValidationConstraintsTest {
                 "BRL",
                 1050,
                 1,
-                List.of( new PaymentItemModel("Shield of the gods",
+                List.of( new PaymentItemModel(
+                        "Shield of the gods",
                         1,
                         1050)),
                 new PaymentCardModel(
                         "credit card",
                         "00009123454345",
-                        001,
+                        111,
                         "Septima Zenobia",
                         "09890809800",
-                        04,
+                        4,
                         2060),
                 new CostumerModel(
                         "Septima Zenobia",
                         "septimazenobia@email.com",
-                        00,
-                        01,
+                        555,
+                        11,
                         900009900,
                         "03/03/01",
                         "09890809800",
@@ -95,7 +106,7 @@ public class PaymentValidationConstraintsTest {
                                 "SP",
                                 "Athenas",
                                 "greek",
-                                0000000
+                                23401
                         )
                 )
         );

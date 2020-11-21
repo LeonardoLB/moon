@@ -1,5 +1,6 @@
 package com.leolsbufalo.moon.model;
 
+import com.leolsbufalo.moon.entity.PaymentCard;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
@@ -110,14 +111,24 @@ public class PaymentCardValidationConstrainstsTest {
         assertFalse(violations.isEmpty());
     }
 
+    @Test
+    public void createPaymentCardWithAllCorrectContent() {
+
+        PaymentCardModel paymentCardModel = createPaymentCardModel();
+
+        Set<ConstraintViolation<PaymentCardModel>> violations = validator.validate(paymentCardModel);
+
+        assertTrue(violations.isEmpty());
+    }
+
     public PaymentCardModel createPaymentCardModel() {
         return new PaymentCardModel (
                 "credit card",
                 "00009123454345",
-                001,
+                111,
                 "Septima Zenobia",
                 "09890809800",
-                04,
+                4,
                 2060);
     }
 }

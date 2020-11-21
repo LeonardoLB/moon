@@ -1,5 +1,6 @@
 package com.leolsbufalo.moon.model;
 
+import com.leolsbufalo.moon.entity.PaymentItem;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
@@ -61,6 +62,16 @@ public class PaymentItemValidationConstraintsTest {
         Set<ConstraintViolation<PaymentItemModel>> violations = validator.validate(paymentItemModel);
 
         assertFalse(violations.isEmpty());
+    }
+
+    @Test
+    public void createItemWithAllCorrectContent() {
+
+        PaymentItemModel paymentItemModel = createPaymentItemModel();
+
+        Set<ConstraintViolation<PaymentItemModel>> violations = validator.validate(paymentItemModel);
+
+        assertTrue(violations.isEmpty());
     }
 
     public PaymentItemModel createPaymentItemModel() {

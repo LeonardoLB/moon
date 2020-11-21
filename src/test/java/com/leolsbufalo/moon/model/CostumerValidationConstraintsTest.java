@@ -125,8 +125,8 @@ public class CostumerValidationConstraintsTest {
         return new CostumerModel(
                 "Septima Zenobia",
                 "septimazenobia@email.com",
-                00,
-                01,
+                555,
+                11,
                 900009900,
                 "03/03/01",
                 "09890809800",
