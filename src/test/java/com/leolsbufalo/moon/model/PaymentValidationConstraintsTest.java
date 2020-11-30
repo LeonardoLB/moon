@@ -70,7 +70,7 @@ public class PaymentValidationConstraintsTest {
 
         Set<ConstraintViolation<PaymentModel>> violations = validator.validate(paymentModel);
 
-        assertTrue(violations.isEmpty());
+        assertTrue(violations.size() < 1);
     }
 
 
@@ -83,21 +83,21 @@ public class PaymentValidationConstraintsTest {
                         "Shield of the gods",
                         1,
                         1050)),
-                new PaymentCardModel(
-                        "credit card",
-                        "00009123454345",
-                        111,
-                        "Septima Zenobia",
-                        "09890809800",
-                        4,
-                        2060),
+                new PaymentCardModel (
+                "credit card",
+                "00009123454345",
+                111,
+                "Septima Zenobia",
+                "09890809800",
+                4,
+                2060),
                 new CostumerModel(
                         "Septima Zenobia",
                         "septimazenobia@email.com",
                         555,
                         11,
                         900009900,
-                        "03/03/01",
+                        "03/03/1960",
                         "09890809800",
                         new CostumerAndressModel(
                                 "Stret Septima Zenobia",
