@@ -1,7 +1,6 @@
 # To do List
 
 This is a checklist about things to do.
-Some of this items I had some help and revision from a Senior of my team (Lindemberg Andrade).
 
 ## Checklist
 
@@ -15,10 +14,10 @@ Some of this items I had some help and revision from a Senior of my team (Lindem
 - ✅ Implement Converter 
 - ✅ Create Error Handlers in Dto 
 - ✅ Create Tests 
-- Improving Tests
+- ✅ Improving Tests
 - ✅ Config Kafka Manager
 - ✅ Config Kafka
-- Config Start Kafka in Docker-compose Init Config
+- ✅ Config Start Kafka in Docker-compose Init Config
 - ✅ Create producer to Kafka
 - ✅ Validate Costumer andress properties, it can have letter and numbers
 - ✅ Entities relationship  

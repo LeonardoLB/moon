@@ -49,8 +49,10 @@ services:
     ports:
       - "9092:9092"
     environment:
+      ADVERTISED_HOST: "moon"
       ZOOKEEPER_CONNECT: moon-zookeeper:2181
       KAFKA_DELETE_TOPIC_ENABLE: "true"
+      KAFKA_CREATE_TOPICS: "moon-create-payment:1:1"
     links:
       - "zookeeper"
 
@@ -58,7 +60,7 @@ services:
     image: sheepkiller/kafka-manager:latest
     container_name: moon-kafka-manager
     ports:
-      - "9009:9009"
+      - "9000:9000"
     links:
       - zookeeper
       - kafka

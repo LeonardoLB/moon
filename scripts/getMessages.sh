@@ -1,0 +1,1 @@
+bin/kafka-console-consumer.sh --bootstrap-server moon-kafka:9092 --topic moon-create-payment --from-beginning
